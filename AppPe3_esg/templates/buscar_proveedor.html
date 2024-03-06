@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+
+{% block titulo %}
+BUSQUEDA DE PROVEEDORES
+{% endblock%}
+
+{% block parrafo %}
+
+    <form action="/APesg/buscar_proveedor" method="get"> 
+        <ul>
+            <p>
+                CUIT: <input type="text", name="cuit">  
+                <input type="submit" value="Buscar" class="btn btn-success">
+            </p>
+        </ul>
+
+    </form>
+
+    <ul><p> {{mensaje}} </p></ul>
+    
+    {% for provbus in resultados %}
+    
+        <ul><p> {{ provbus }} </p></ul>
+
+    {% endfor %}
+
+{% endblock %}
